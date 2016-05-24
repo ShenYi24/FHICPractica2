@@ -1,0 +1,64 @@
+<DOCTYPE !html>
+<html lang="es">
+<html>
+  <head>
+      <meta charset="utf-8">
+      <script src="jquery-2.1.3.js"></script>
+      <link rel="stylesheet" type="text/css" href="stylesheet1.css" />
+      <link rel="stylesheet" type="text/css" href="menu.css" />
+      <script language="javascript" type="text/javascript" href="jquery.js">
+          
+    //funcion para hacer el pop up
+      function popitup(url) {
+	       newwindow=window.open(url,'name','height=400,width=400');
+	       if (window.focus) {newwindow.focus()}
+	       return false;
+          }
+
+      </script>
+  </head>
+  <body class="pantalla1">
+    <script src="jquery.js"></script>
+      <nav>
+
+          <div id="header"> NRG Calculator Plus</div>
+          
+        <div id="menu">
+<ul>
+  <li class="nivel1"><img src="usuario.png" id="usuario" class="nivel1" />
+<!--[if lte IE 6]><a href="#" class="nivel1ie">Opción 1<table class="falsa"><tr><td><![endif]-->
+	<ul>
+		<li><a href="#">Mi perfil</a></li>
+		
+	</ul>
+
+  </li>
+</ul>
+</div>
+    <!--link para la imagen logo, que nos redirige a la pantalla principal  -->
+      </nav>
+      <a href="pantallaprincipal.html"><img id="logo" src="home.png"/></a>
+      <section>
+          <!--Con el botón Mis datos personales, muestrarà un popup para editar el perfil del usuario -->
+         <div class="left">
+            <!--Con el span hacemos que las letras tengan un efecto especial cuando pasamos el mouse  -->
+             <button class=butMisdatos a href="formulario.html" onclick="return popitup('formulario.html')" id=butMisdatos ><span>Mis datos personales</span></button>
+             
+        </div>
+          
+        
+        
+          
+          <a href=consultaconsumo.html ><button class="button" id="calculo">Consultar Consumo</button></a>
+          
+          <a href=consultaconsumo.html><button class="button" id="calculo">Consultar CO2</button></a>
+          
+          
+
+      </section>
+     
+      <div id="footer"></div>
+
+  </body>
+
+</html>

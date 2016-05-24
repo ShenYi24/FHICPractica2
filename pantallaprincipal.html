@@ -1,0 +1,44 @@
+<DOCTYPE !html>
+<html lang="es">
+<html>
+  <head>
+      <meta charset="utf-8">
+      <script src="jquery-2.1.3.js"></script>
+      <link rel="stylesheet" type="text/css" href="stylesheet1.css"  />
+      <link rel="stylesheet" type="text/css" href="menu.css"  />
+  </head>
+  <body class="home">
+    <script src="jquery.js"></script>
+      <nav>
+
+          <div id="header">NRG Calculator Plus</div>
+        
+          <!-- Un menú para la imagen usuario y cuando pasamos el ratón, nos muestrarà una menú con diferentes opciones, y en nuestro caso -->
+           <div id="menu">
+<ul>
+  <li class="nivel1"><img src="usuario.png" id="usuario" class="nivel1" />
+<!--[if lte IE 6]><a href="#" class="nivel1ie">Opción 1<table class="falsa"><tr><td><![endif]-->
+	<ul>
+		<li><a href="pantalla1.html">Mi perfil</a></li>
+		
+	</ul>
+
+  </li>
+</ul>
+</div>
+      </nav>
+      <!--link para la imagen logo, para redirigirnos a la pantalla principal -->
+      
+      <a href="pantallaprincipal.html"><img id="logo" src="home.png"/></a>
+      
+      <!--Añadir los 2 butones para ir a la pantalla de calculo de consomos y otro para ver los consejos  -->
+      <section>
+          <a href=calcularconsumo.html ><button class="button" id="calculo">Calcular Consumo</button></a>
+          <a href=consejos.html ><button class="button" id="consejos" >Consejos</button></a>
+
+      </section>
+      <div id="footer"></div>
+
+  </body>
+
+</html>

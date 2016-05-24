@@ -1,0 +1,273 @@
+<DOCTYPE !html>
+<html lang="es">
+<html>
+  <head>
+      <meta charset="utf-8">
+      <script src="jquery-2.1.3.js"></script>
+      <link rel="stylesheet" type="text/css" href="stylesheet1.css" />
+      <link rel="stylesheet" type="text/css" href="menu.css"  />
+      <Title>Resumen consumo medio</Title>
+      
+  </head>
+  <body class="consultaconsumo">
+    
+      
+      <!--funcion calcpayments para calcular el KWh y su correspondiente € -->
+    <script>
+        
+        
+        function calcpayments()
+        {
+
+        //cogemos los valores introducidos en los campos y lo multiplicamos por su kwh
+        var ntv=0.3*document.forms[0].tv.value*30*document.forms[0].horastv.value;
+        
+            
+        var nlav=1.975*document.forms[1].lavadora.value*30*document.forms[1].horaslavadora.value;
+       
+        var nnev=0.3*document.forms[2].nevera.value*30*document.forms[2].horasnevera.value;
+       
+        
+
+        
+        //Sumamos todos los valores para obtener la cantidad total
+
+        var result=(ntv+nlav+nnev);
+        
+        //
+        result=Math.round(result*100) /100 ;
+        
+        
+        var money=0.125;
+        var moneytv=ntv*money;
+        var moneylav=nlav*money;
+        var moneynev=nnev*money;
+        var moneytotal=moneylav+moneynev+moneytv;
+        
+
+        //el resultado que se tiene que mostrar, el KWh y € total, y el KWh y € para cada equipo
+        
+        
+        document.getElementById("monthlypayment2").innerHTML="<u><b>Total:</b></u> "+result + " KWh | "+ moneytotal+ " € <br> <br>" + "Televisión: "+ ntv + " KWh | "+ moneytv+ " € <br> Lavadora: " + nlav + " KWh | "+ moneylav+ " € <br> Nevera: " + nnev +" KWh | "+ moneynev+ " €" ;
+       
+               }
+
+    </script>
+      <nav>
+
+          <div id="header">NRG Calculator Plus</div>
+         <div id="menu">
+<ul>
+  <li class="nivel1"><img src="usuario.png" id="usuario" class="nivel1" />
+<!--[if lte IE 6]><a href="#" class="nivel1ie">Opción 1<table class="falsa"><tr><td><![endif]-->
+	<ul>
+		<li><a href="pantalla1.html">Mi perfil</a></li>
+		
+	</ul>
+
+  </li>
+</ul>
+
+<!-- Sección con la imagen del equipo, acompañado por 2 campos, donde tenemos que introducir el numero de equipos que disponemos y su hora de uso -->
+</div>
+      </nav>
+      
+      <a href="pantallaprincipal.html"><img id="logo" src="home.png"/></a>
+      <section>
+    
+          <div class="electro">
+              <table id="tabla">
+                <tr>
+                    <td>
+                        <img src="tv.png" />
+                    
+                    </td>
+                    <td>
+                        <form>
+                            N equipos: <br/>
+                            <input type="text"  name="tv"/>
+                            <br>
+                            Horas<br/>
+                            <input type="text"  name="horastv"/>
+                            
+                            
+                        
+                            
+                        </form>
+    
+                        
+                    
+                    </td>
+                    <td>
+                        <img  src="lavadora.png"/>
+                    
+                    </td>
+                    <td>
+                        <form>
+                            N equipos: <br/>
+                            <input type="text"  name="lavadora"/>
+                            <br>
+                            Horas<br/>
+                            <input type="text"  name="horaslavadora"/>
+                            
+                            
+                        
+                            
+                        </form>
+    
+                    
+                    </td>
+                    <td>
+                        <img src="nevera.png"/>
+                    
+                    </td>
+                    <td>
+                        <form>
+                            N equipos: <br/>
+                            <input type="text"  name="nevera"/>
+                            <br>
+                            Horas<br/>
+                            <input type="text"  name="horasnevera"/>
+                            
+                       
+                        </form>
+    
+                    </td>
+                    
+                  
+                  </tr>
+                  
+                  <tr>
+                      <td>
+                          <img src="nevera.png"/>
+                      
+                      </td>
+                      <td>
+                        <form>
+                            N equipos: <br/>
+                            <input type="number" name="nevera2"/>
+                            <br>
+                            Horas<br/>
+                            <input type="number" name="horasnevera2"/>
+                            
+                            
+                        
+                            
+                        </form>
+    
+                      </td>
+                      
+                      <td>
+                          <img src="nevera.png"/>
+                      
+                      </td>
+                      
+                      <td>
+                          <form>
+                            N equipos: <br/>
+                            <input type="number" name="equipos">
+                            <br>
+                            Horas<br/>
+                            <input type="number" name="horas">
+                            
+                            
+                        
+                            
+                        </form>
+    
+                      
+                      </td>
+                      
+                      <td>
+                          <img src="nevera.png"/>
+                      
+                      </td>
+                      <td>
+                          
+                          <form>
+                            N equipos: <br/>
+                            <input type="number" name="equipos">
+                            <br>
+                            Horas<br/>
+                            <input type="number" name="horas">
+                            
+                          
+                        </form>
+    
+                          
+                          
+                          
+                      
+                      </td>
+                      
+                  
+                  </tr>
+                  <tr>
+                  
+                  </tr>
+                  
+                  <tr>
+                  
+                  </tr>
+                  
+              </table>
+              
+              
+            
+              
+          </div>
+          
+         
+          <button class="buttoncalcular" id="myBtn" onclick="calcpayments()"  >Calcular</button>
+          
+           <!--Cuando clicamos el botón calcular ,nos mostrarà el modal con los resultados de la estructura que hemos definido antes con el id monthlypayments2-->
+          <div id="myModal" class="modal">
+
+  
+              <div class="modal-content" id="monthlypayment2">
+                <span class="close">x</span>
+                  
+              </div>
+              
+              
+              
+
+          </div>
+      
+    <script>
+        
+                // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal 
+        btn.onclick = function() {
+            calcpayments();
+            modal.style.display = "block";
+            
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+      </script>
+      </section>
+         
+  </body>
+</html>
+
+

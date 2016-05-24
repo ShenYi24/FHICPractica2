@@ -1,0 +1,44 @@
+<DOCTYPE !html>
+<html lang="es">
+<html>
+  <head>
+      <title>Editar Perfil</title>
+      <meta charset="utf-8">
+      <script src="jquery-2.1.3.js"></script>
+      <link rel="stylesheet" type="text/css" href="stylesheet1.css" />
+  </head>
+  <body>
+    <script src="jquery.js"></script>
+      <nav>
+
+          <div id="header">Formulario</div>
+        
+      </nav>
+      <h1 id="tituloform">Editar su perfil de usuario</h1>
+      <P><B>Por favor, edite su información de usuario a continuación:</B></P>
+
+      <form method="POST" action="index.htm">
+
+        <P><input type="text" size="15" name="FD_profile_first_name" value="$!User.FirstName">
+            <input type="text" size="15" name="FD_profile_last_name" value="$!User.LastName">
+            <BR>Nombre Y Apellido
+                <P><input type="text" size="30" name="FD_profile_email" value="$!User.Email">
+                    <BR>Email
+
+                        <P><input type="password" size="10" name="FD_profile_password" value="">
+                            <BR>Introducir nueva contraseña (o dejar en blanco para mantener la misma contraseña)
+                                <P><input type="submit" name="submitbtn" value="Change User Profile">
+
+                                </P>
+                            </BR>
+                        </P>
+                    </BR>
+                </P>
+            </BR>
+          </P>
+      </form>
+      <div id="footer"></div>
+
+  </body>
+
+</html>
